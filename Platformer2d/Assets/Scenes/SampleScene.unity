@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 646531826}
   - component: {fileID: 646531827}
   - component: {fileID: 646531828}
+  - component: {fileID: 646531829}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -897,6 +898,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _alarm: {fileID: 646531827}
+--- !u!114 &646531829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646531824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117e93b6bf3d76142817eab302dcb7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _alarmSystem: {fileID: 646531828}
 --- !u!1 &1205134004
 GameObject:
   m_ObjectHideFlags: 0
