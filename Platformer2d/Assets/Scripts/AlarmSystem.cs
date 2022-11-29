@@ -6,23 +6,23 @@ public class AlarmSystem : MonoBehaviour
 {
 	[SerializeField] private AudioSource _alarm;
 
-	private Tweener _tween;
+	private Tweener _volumeTween;
 
 	private void Start()
 	{
 		_alarm = GetComponent<AudioSource>();
 	}
 
-	public void ChangeVolume(float volume, float duration)
+	public void ChangeVolume(float targetVolume, float duration)
 	{
-		if (_tween.IsActive())
+		if (_volumeTween.IsActive())
 		{
-			_tween.Kill();
-			_tween = DOTweenModuleAudio.DOFade(_alarm, volume, duration);
+			_volumeTween.Kill();
+			_volumeTween = DOTweenModuleAudio.DOFade(_alarm, targetVolume, duration);
 		}
 		else
 		{
-			_tween = DOTweenModuleAudio.DOFade(_alarm, volume, duration);
+			_volumeTween = DOTweenModuleAudio.DOFade(_alarm, targetVolume, duration);
 		}
 	}
 }
