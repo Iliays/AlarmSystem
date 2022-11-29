@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
 public class AlarmSystem : MonoBehaviour
@@ -16,6 +15,14 @@ public class AlarmSystem : MonoBehaviour
 
 	public void ChangeVolume(float volume, float duration)
 	{
-		_tween = DOTweenModuleAudio.DOFade(_alarm, volume, duration);
+		if (_tween.IsActive())
+		{
+			_tween.Kill();
+			_tween = DOTweenModuleAudio.DOFade(_alarm, volume, duration);
+		}
+		else
+		{
+			_tween = DOTweenModuleAudio.DOFade(_alarm, volume, duration);
+		}
 	}
 }
